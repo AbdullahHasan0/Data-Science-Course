@@ -82,11 +82,12 @@ else :
 
 valid_choices3 = ["red", "blue","yellow","rainbow"]
 while True:
-    choice3 = input("Where do you want to go? Left or Right?\n").lower()
+    choice3 = input("Where do you want to go? red ,blue,yellow or rainbow \n").lower()
     if choice3 in valid_choices3:
         break
     else:
-        print("Invalid choice. Please enter 'left' or 'right'.")
+        print("Invalid choice. Please enter 'red' , blue , yellow or rainbow .")
+        
 
 
 if choice3 == "red":
