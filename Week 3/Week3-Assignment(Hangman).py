@@ -1,64 +1,79 @@
 import random
 
 def current_state(live):
-    stages = ['''
-    +---+
-    | |
-    O |
-    /|\ |
-    / \ |
-    |
-    =========
-    ''', '''
-    +---+
-    | |
-    O |
-    /|\ |
-    / |
-    |
-    =========
-    ''', '''
-    +---+
-    | |
-    O |
-    /|\ |
-    |
-    |
-    =========
-    ''', '''
-    +---+
-    | |
-    O |
-    /| |
-    |
-    |
-    =========''', '''
-    +---+
-    | |
-    O |
-    | |
-    |
-    |
-    =========
-    ''', '''
-    +---+
-    | |
-    O |
-    |
-    |
-    |
-    =========
-    ''', '''
-    +---+
-    | |
-    |
-    |
-    |
-    |
-    =========
-    ''']
+    stages = [
+'''
+ +---+
+ |   |
+ O   |
+/|\  |
+/ \  |
+     |
+=========
+''', 
+
+'''
+ +---+
+ |   |
+ O   |
+/|\  |
+/    |
+     |
+=========
+''', 
+
+'''
+ +---+
+ |   |
+ O   |
+/|\  |
+     |
+     |
+=========
+''', 
+
+'''
+ +---+
+ |   |
+ O   |
+/|   |
+     |
+     |
+=========
+''', 
+
+'''
+ +---+
+ |   |
+ O   |
+ |   |
+     |
+     |
+=========
+''', 
+
+'''
+ +---+
+ |   |
+ O   |
+     |
+     |
+     |
+=========
+''', 
+
+'''
+ +---+
+ |   |
+     |
+     |
+     |
+     |
+=========
+'''
+]
     print(stages[live])
-    
+
 
 def Hangman():
     print("Welcome To Hangman Game!! \n")
@@ -66,7 +81,7 @@ def Hangman():
     choosen_word = random.choice(word_list)
     display = []
     live = 6
-    
+
     for letter in choosen_word:
         display += "_"
     while(True):
@@ -77,13 +92,13 @@ def Hangman():
             print(display)
             print("\n")
             guess = input("Guess A Letter :\n").lower()
-            
+
             if guess in choosen_word:
                 if guess not in display:
                     for i in range(len(choosen_word)):
                         if choosen_word[i] == guess:
                             display[i] = guess
-                            
+
                 else:
                     print("\nAlready Guessed That Letter!\n")
             else:
